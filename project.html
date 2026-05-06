@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Prince KAYINAMURA</title>
+    <style>
+        /* Shared Variables from personal.html[cite: 2] */
+        :root {
+            --primary-color: #007AFF; 
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-gradient: linear-gradient(135deg, #007AFF 0%, #00d4ff 100%);
+            --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar[cite: 2] */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; }
+        .prince { color: var(--primary-color); }
+
+        .navbar ul { display: flex; list-style: none; gap: 2rem; }
+        .navbar a { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: 0.3s; }
+        .navbar a:hover { color: var(--primary-color); }
+
+        /* Hero Section Styling from personal.html[cite: 2] */
+        .hero {
+            padding: 10rem 10% 4rem;
+            text-align: center;
+            background: radial-gradient(circle at top right, rgba(0, 122, 255, 0.1), transparent);
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(0, 122, 255, 0.1);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Project Grid[cite: 2, 3] */
+        .container { padding: 0 10% 8rem; }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: left;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-10px);
+        }
+
+        .project-card h3 { margin-bottom: 1rem; color: var(--text-main); }
+        .project-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Interactive Add Section[cite: 3] */
+        .add-project-section {
+            margin-top: 6rem;
+            padding: 4rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 32px;
+            border: 1px dashed rgba(0, 122, 255, 0.3);
+            text-align: center;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            background: #1e293b;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            font-family: inherit;
+        }
+
+        input:focus { border-color: var(--primary-color); outline: none; }
+
+        .kay {
+            grid-column: span 2;
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .kay:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 122, 255, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .form-grid { grid-template-columns: 1fr; }
+            .kay { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="logo">Prince <span class="prince">KAYINAMURA.</span></div>
+        <nav>
+            <ul>
+                <li><a href="personal.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="section-tag">Portfolio</div>
+        <h1>My Digital <span class="prince">Creations.</span></h1>
+        <p style="color: var(--text-muted);">A showcase of modern web architecture and user-centric design[cite: 2].</p>
+    </section>
+
+    <main class="container">
+        <!-- Project Grid[cite: 3] -->
+        <div class="project-grid" id="projectGrid">
+            <div class="project-card">
+                <h3>Intango Update</h3>
+                <p>Centralized school portal for real-time announcements and administrative updates[cite: 2, 3].</p>
+            </div>
+            <div class="project-card">
+                <h3>Innovation MIS</h3>
+                <p>Full-stack management system for coordinating student innovation entries[cite: 2, 3].</p>
+            </div>
+            <div class="project-card">
+                <h3>Museum Puzzle</h3>
+                <p>Interactive educational game featuring historical figures from Musanze[cite: 2, 3].</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 KAYINAMURA Prince. All rights reserved[cite: 2].</p>
+    </footer>
+</body>
+</html>

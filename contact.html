@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince KAYINAMURA | Web Developer</title>
+    <style>
+/* Reusing your modern variables */
+:root {
+    --primary-color: #007AFF; 
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-gradient: linear-gradient(135deg, #007AFF 0%, #00d4ff 100%);
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo { font-size: 1.5rem; font-weight: 800; }
+.prince { color: var(--primary-color); }
+
+.navbar ul { display: flex; list-style: none; gap: 2rem; }
+.navbar a { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: 0.3s; }
+.navbar a:hover { color: var(--primary-color); }
+
+/* Hero Section Updates[cite: 2] */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 0 10%;
+    background: radial-gradient(circle at top right, rgba(0, 122, 255, 0.1), transparent);
+}
+
+.hero-content { text-align: left; max-width: 600px; }
+.hero h1 { font-size: 4rem; margin-bottom: 1rem; font-weight: 800; }
+
+.contact-info-short {
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.profile-img {
+    width: 320px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Contact Section Styling */
+.section { padding: 8rem 10%; text-align: center; }
+.section-tag {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(0, 122, 255, 0.1);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.contact-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
+
+.contact-card h3 { color: var(--primary-color); margin-bottom: 10px; }
+.contact-card a { color: var(--text-main); text-decoration: none; font-weight: 600; }
+
+/* Mobile View[cite: 1, 2] */
+@media (max-width: 968px) {
+    .hero { flex-direction: column-reverse; text-align: center; padding-top: 100px; height: auto; }
+    .hero h1 { font-size: 2.5rem; }
+    .navbar ul { display: none; }
+}
+    </style>
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="logo">Prince <span class="prince">KAYINAMURA.</span></div>
+        <nav>
+            <ul>
+                <li><a href="personal.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <img src="img/Screenshot 2026-03-01 120539.png" alt="Prince" class="profile-img">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="prince">Prince</span></h1>
+            <p>Web Developer & Software Student at INTANGO TSS</p>
+            <div class="contact-info-short">
+                <p>📍 Kigali, Rwanda</p>
+                <p>📧 princekayinamura54@gmail.com</p>
+            </div>
+            <a href="#contact" style="display: inline-block; padding: 1rem 2.5rem; background: var(--accent-gradient); color: white; text-decoration: none; border-radius: 12px; font-weight: 600;">Let's Talk</a>
+        </div>
+    </section>
+
+    <!-- New Contact Section -->
+    <section id="contact" class="section">
+        <div class="section-tag">Reach Out</div>
+        <h2>Get In Touch</h2>
+        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Email Me</h3>
+                <a href="mailto:princekayinamura54@gmail.com">princekayinamura54@gmail.com</a>
+            </div>
+            <div class="contact-card">
+                <h3>Call Me</h3>
+                <a href="tel:0798541033">0798541033</a>
+            </div>
+            <div class="contact-card">
+                <h3>Location</h3>
+                <p>Available for remote work & local projects in Kigali.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 4rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-muted);">
+        <p>© 2026 KAYINAMURA Prince. All rights reserved.</p>[cite: 1, 2]
+    </footer>
+
+</body>
+</html>

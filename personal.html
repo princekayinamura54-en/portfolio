@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince KAYINAMURA | Web Developer</title>
+    <style>/* General Reset & Modern Variables */
+:root {
+    --primary-color: #007AFF; 
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-gradient: linear-gradient(135deg, #007AFF 0%, #00d4ff 100%);
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar - Glassmorphism Effect[cite: 2, 3] */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.prince {
+    color: var(--primary-color);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section with Integrated Image */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 0 10%;
+    background: radial-gradient(circle at top right, rgba(0, 122, 255, 0.1), transparent);
+}
+
+.hero-content {
+    text-align: left;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Profile Picture Styling */
+.profile-img {
+    width: 320px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.kay {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--accent-gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kay:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 122, 255, 0.3);
+}
+
+/* Sections & Grid Layout */
+.section {
+    padding: 8rem 10%;
+    text-align: center;
+}
+
+.section-tag {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(0, 122, 255, 0.1);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-10px);
+}
+
+/* Footer[cite: 2, 3] */
+footer {
+    text-align: center;
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        height: auto;
+        padding-top: 8rem;
+    }
+    .hero-content { text-align: center; }
+    .hero h1 { font-size: 2.5rem; }
+    .profile-img { width: 240px; height: 300px; }
+}
+    </style>
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="logo">Prince <span class="prince">KAYINAMURA.</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="profile-picture"></div><img src="img/Screenshot 2026-03-01 120539.png" alt="Prince" class="profile-img"> <!-- New profile-picture div -->
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="prince">Prince</span></h1>
+            <p>Web Developer & Software Student at INTANGO TSS</p>
+            <a href="#projects" class="kay">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="section-tag">Who I Am</div>
+        <h2>🌟 My Story</h2>
+        <p>I am a software development student specializing in building clean, modern web applications. I focus on turning complex problems into intuitive digital experiences with high-quality CSS aesthetics.</p>
+        My journey into development didn’t start with knowing everything—it started with curiosity. I wanted to understand how websites are built, how buttons work, and how ideas turn into something you can actually see and use. At the beginning, things were not easy. There were errors, confusion, and moments where nothing worked. But instead of stopping, I kept going.
+
+With time,<p> I started to enjoy the challenge. Every small project I built gave me confidence. I learned that coding is not just about writing lines of code—it’s about thinking, solving problems, and being creative.
+
+At the same time,</p> basketball has always been part of my life. On the court, I learned discipline, teamwork, and how to stay focused even when things get tough. That same mindset helps me as a developer. Whether I’m debugging code or learning something new, I approach it the same way I approach a game—keep practicing, stay patient, and never give up.
+
+Today, I’m still growing, still learning, and still building. I may not know everything yet, but I’m committed to improving every day and turning my ideas into real projects.
+    </section>
+
+    <section id="projects" class="section">
+        <div class="section-tag">My Work</div>
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Intango Update</h3>
+                <p>A comprehensive news and announcement portal featuring an admin panel and secure authentication.</p>
+            </div>
+            <div class="project-card">
+                <h3>Student Application System</h3>
+                <p>A management system for tracking student requests and administrative approvals.</p>
+            </div>
+            <div class="project-card">
+                <h3>Carpentry Gallery</h3>
+                <p>A high-end artisan showcase with modern UI components and booking features.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 KAYINAMURA Prince. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
