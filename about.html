@@ -4,194 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Prince KAYINAMURA</title>
+    <link rel="stylesheet" href="global.css">
+    <style>
+        .about-container { padding: 2rem 0; }
+        .bio-text { max-width: 750px; margin: 0 auto 3rem; color: var(--text-muted); font-size: 1.1rem; }
+        
+        .highlight-box {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 32px;
+            padding: 3.5rem 10%;
+            margin: 2rem 10%;
+            text-align: left;
+        }
+        .highlight-box h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--text-main); }
+        .highlight-box p { color: var(--text-muted); margin-bottom: 1.2rem; }
+
+        .skills-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            padding: 0 10%;
+        }
+        .skill-pill {
+            padding: 0.6rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .skill-pill:hover {
+            background: rgba(0, 122, 255, 0.1);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        @media(max-width: 768px) {
+            .highlight-box { margin: 2rem 5%; padding: 2rem; }
+        }
+    </style>
 </head>
-<style>
-    /* General Reset & Variables */
-:root {
-    --primary-color: #007AFF; /* Modern Tech Blue */
-    --bg-dark: #0f172a;
-    --bg-card: #1e293b;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --accent-gradient: linear-gradient(135deg, #007AFF 0%, #00d4ff 100%);
-    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    font-family: var(--font-family);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* Navbar Style */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 10%;
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(10px);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-}
-
-.prince {
-    color: var(--primary-color);
-}
-
-.navbar ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: var(--text-muted);
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.navbar a:hover {
-    color: var(--primary-color);
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: radial-gradient(circle at top right, rgba(0, 122, 255, 0.1), transparent);
-}
-
-.hero h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    font-weight: 800;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-}
-
-.kay {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background: var(--accent-gradient);
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.kay:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 122, 255, 0.3);
-}
-
-/* Sections */
-.section {
-    padding: 8rem 10%;
-    text-align: center;
-}
-
-.section-tag {
-    display: inline-block;
-    padding: 0.4rem 1rem;
-    background: rgba(0, 122, 255, 0.1);
-    color: var(--primary-color);
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-}
-
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-/* Project Grid */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.project-card {
-    background: var(--bg-card);
-    padding: 2.5rem;
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    text-align: left;
-    transition: all 0.3s ease;
-}
-
-.project-card:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-10px);
-}
-
-.project-card h3 {
-    margin-bottom: 1rem;
-    color: var(--text-main);
-}
-
-.project-card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 4rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    color: var(--text-muted);
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .navbar ul { display: none; }
-    .section { padding: 5rem 5%; }
-}
-</style>
 <body>
     
     <header class="navbar">
         <div class="logo">Prince <span class="prince">KAYINAMURA.</span></div>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
         <nav>
-            <ul>
+            <ul id="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li class="active"><a href="about.html">About</a></li>
                 <li><a href="project.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -199,30 +64,22 @@ footer {
     </header>
 
     <main class="about-container">
-        <!-- Hero Bio -->
         <section id="bio" class="section">
             <div class="section-tag">The Developer</div>
-          
             <h2>Crafting Digital Experiences</h2>
             <div class="bio-text">
-                <p>I am a dedicated software development student at <strong>INTANGO TSS</strong>. My journey in tech is driven by a passion for modern aesthetics and high-performance code[cite: 10]. I don't just build websites; I design interfaces that feel like a seamless extension of the user's intent.</p>
+                <p>I am a dedicated software development student at <strong>INTANGO TSS</strong>. My journey in tech is driven by a passion for modern aesthetics and high-performance code. I don't just build websites; I design interfaces that feel like a seamless extension of the user's intent.</p>
             </div>
         </section>
 
-        <!-- The "Interesting" Section -->
         <section id="interests" class="highlight-box">
             <div class="section-tag">The Competitor</div>
             <h3>Beyond the Keyboard</h3>
-            <p>I started my journey into development out of curiosity—wanting to understand how websites actually work. At first, it was just simple code, small experiments, and a lot of mistakes. But over time, I began to enjoy the process of building something from nothing and watching it come to life on the screen.
-
-As I kept learning,<p>I realized that development is not just about writing code, but about solving problems and thinking creatively. Every project I work on helps me improve my skills and pushes me to become better than I was yesterday.
-
-Outside of coding, basketball is a big part of who I am. Playing on the court has taught me discipline, patience, and teamwork. Just like in development, you don’t get better overnight—you practice, you fail, and you keep going. That mindset is what I bring into my work as a developer.
-
-Today, I am still learning, still building, and still challenging myself. My goal is simple: to grow as a developer and create projects that are both useful and meaningful.</p>
+            <p>I started my journey into development out of curiosity—wanting to understand how websites actually work. At first, it was just simple code, small experiments, and a lot of mistakes. But over time, I began to enjoy the process of building something from nothing and watching it come to life on the screen.</p>
+            <p>As I kept learning, I realized that development is not just about writing code, but about solving problems and thinking creatively. Every project I work on helps me improve my skills and pushes me to become better than I was yesterday.</p>
+            <p>Outside of coding, basketball is a big part of who I am. Playing on the court has taught me discipline, patience, and teamwork. Just like in development, you don’t get better overnight—you practice, you fail, and you keep going. That mindset is what I bring into my work as a developer.</p>
         </section>
 
-        <!-- Skill Pills -->
         <section id="skills" class="section">
             <div class="section-tag">Technical Arsenal</div>
             <div class="skills-grid">
@@ -239,5 +96,6 @@ Today, I am still learning, still building, and still challenging myself. My goa
         <p>© 2026 KAYINAMURA Prince. All rights reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
